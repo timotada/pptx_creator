@@ -4,7 +4,7 @@ FastAPI backend service for processing PowerPoint templates with placeholder rep
 
 ## 🚀 Features
 
-- **PPTX Processing**: Replace `{{COMPANY_NAME}}`, `{{DATE}}`, and `{{LOGO}}` placeholders
+ - **PPTX Processing**: Replace `{{COMPANY_NAME}}`, `{{DATE_LONG}}`, and `{{LOGO}}` placeholders
 - **Logo Handling**: Auto-scale logos to fit bounding boxes while preserving aspect ratio
 - **Date Formatting**: Convert dates to ordinal format (e.g., "24th May 2025")
 - **File Validation**: Validate PPTX files and image formats
@@ -82,7 +82,7 @@ Health check endpoint.
 Your PowerPoint template should contain these placeholders:
 
 - `{{COMPANY_NAME}}` - Replaced with company name in text
-- `{{DATE}}` - Replaced with formatted date (e.g., "24th May 2025")
+ - `{{DATE_LONG}}` - Replaced with formatted date (e.g., "24th May 2025")
 - `{{LOGO}}` - Replaced with uploaded logo image
 
 ### Logo Placement

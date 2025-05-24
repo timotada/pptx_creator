@@ -38,7 +38,7 @@ class PPTXProcessor:
             input_path: Path to input PPTX file
             output_path: Path for output PPTX file
             company_name: Company name to replace {{COMPANY_NAME}} placeholders
-            date: Formatted date string to replace {{DATE}} placeholders
+            date: Formatted date string to replace {{DATE_LONG}} placeholders
             logo_path: Optional path to logo image for {{LOGO}} placeholders
         """
         
