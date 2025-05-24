@@ -124,14 +124,18 @@ async def process_pptx(
 @app.get("/download/{filename}")
 async def download_file(filename: str):
     """Download processed PPTX file"""
-    file_path = os.path.join(TEMP_OUTPUT_DIR, filename)
-    
-    if not os.path.exists(file_path):
+    # Resolve the absolute path and ensure it stays within TEMP_OUTPUT_DIR
+    sanitized_path = os.path.abspath(os.path.join(TEMP_OUTPUT_DIR, filename))
+
+    if not sanitized_path.startswith(os.path.abspath(TEMP_OUTPUT_DIR)):
+        raise HTTPException(status_code=400)
+
+    if not os.path.exists(sanitized_path):
         raise HTTPException(status_code=404, detail="File not found")
-    
+
     # Return the file with proper headers for download
     return FileResponse(
-        path=file_path,
+        path=sanitized_path,
         filename=filename,
         media_type="application/vnd.openxmlformats-officedocument.presentationml.presentation"
     )
