@@ -68,7 +68,7 @@ Coding/
 
 ### Backend (FastAPI + Python)
 - ✅ **PPTX Processing**: python-pptx for template manipulation
-- ✅ **Placeholder Replacement**: {{COMPANY_NAME}}, {{DATE}}, {{LOGO}}
+ - ✅ **Placeholder Replacement**: {{COMPANY_NAME}}, {{DATE_LONG}}, {{LOGO}}
 - ✅ **Logo Scaling**: Aspect ratio preservation, no upscaling
 - ✅ **Date Formatting**: Ordinal format (24th May 2025)
 - ✅ **File Validation**: Type and size checking

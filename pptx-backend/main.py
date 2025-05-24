@@ -60,7 +60,7 @@ async def process_pptx(
     Args:
         file: PPTX template file
         company_name: Company name to replace {{COMPANY_NAME}} placeholders
-        date: Date string to format and replace {{DATE}} placeholders
+        date: Date string to format and replace {{DATE_LONG}} placeholders
         logo: Optional logo image to replace {{LOGO}} placeholders
     
     Returns:
