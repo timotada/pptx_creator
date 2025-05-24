@@ -232,4 +232,6 @@ Thumbs.db
 *.tmp
 *.temp
 temp/
-tmp/ 
+tmp/
+# Allow tracking of frontend lib directory
+!pptx-templater/src/lib/
