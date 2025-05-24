@@ -37,11 +37,11 @@ def test_process_endpoint_invalid_file_type():
     assert response.status_code == 400
     assert "File must be a .pptx file" in response.json()["detail"]
 
-def test_download_endpoint_not_implemented():
-    """Test download endpoint returns not implemented"""
+def test_download_endpoint_missing_file():
+    """Test download endpoint returns 404 for missing files"""
     response = client.get("/download/test.pptx")
-    assert response.status_code == 501
-    assert "not implemented" in response.json()["detail"]
+    assert response.status_code == 404
+    assert "File not found" in response.json()["detail"]
 
 # Integration tests would require actual PPTX files
 # These would be added in a full test suite 
