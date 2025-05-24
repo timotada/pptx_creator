@@ -71,8 +71,9 @@ async def process_pptx(
     if not file.filename.endswith('.pptx'):
         raise HTTPException(status_code=400, detail="File must be a .pptx file")
     
-    # Validate file size (50MB limit)
-    if file.size and file.size > 50 * 1024 * 1024:
+    # Read file content and validate size (50MB limit)
+    file_content = await file.read()
+    if len(file_content) > 50 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="File too large. Maximum size is 50MB")
     
     try:
@@ -81,8 +82,7 @@ async def process_pptx(
             # Save uploaded file
             input_path = os.path.join(temp_dir, "input.pptx")
             with open(input_path, "wb") as buffer:
-                content = await file.read()
-                buffer.write(content)
+                buffer.write(file_content)
             
             # Save logo if provided
             logo_path = None
