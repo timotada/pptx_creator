@@ -165,18 +165,8 @@ COPY . .
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-### AWS Lambda
-The application can be deployed to AWS Lambda using Mangum:
-```bash
-pip install mangum
-```
-
-### Environment Variables
-```bash
-export AWS_ACCESS_KEY_ID=your_key
-export AWS_SECRET_ACCESS_KEY=your_secret
-export S3_BUCKET_NAME=your_bucket
-```
+### Deployment
+Run the application locally with Uvicorn or package it in a Docker container for deployment to any platform. AWS Lambda is optional and not required for local use.
 
 ## 📊 Performance
 
@@ -192,9 +182,9 @@ export S3_BUCKET_NAME=your_bucket
 - Temporary file cleanup
 - CORS configuration
 
-## 🔮 Future Enhancements
+ ## 🔮 Future Enhancements
 
-- **S3 Integration**: Direct upload/download with presigned URLs
+- **Optional S3 Integration**: Direct upload/download with presigned URLs
 - **Queue System**: SQS for background processing
 - **Caching**: Redis for processed templates
 - **Monitoring**: CloudWatch metrics and alarms

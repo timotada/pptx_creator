@@ -11,7 +11,7 @@ A comprehensive browser-based PowerPoint template personalization tool that enab
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Frontend      │    │   Backend       │    │   Storage       │
-│   (Next.js)     │◄──►│   (FastAPI)     │◄──►│   (AWS S3)      │
+│   (Next.js)     │◄──►│   (FastAPI)     │◄──►│ (Local/S3)      │
 │                 │    │                 │    │                 │
 │ • React UI      │    │ • python-pptx   │    │ • File Storage  │
 │ • File Upload   │    │ • Processing    │    │ • Presigned URLs│
@@ -147,15 +147,11 @@ npm run build
 vercel deploy
 ```
 
-### Backend (AWS)
+### Backend (Optional AWS)
 ```bash
 # Docker deployment
 docker build -t pptx-templater-api .
-docker push ecr-repo-url
-
-# Lambda deployment
-pip install mangum
-# Deploy with AWS SAM or CDK
+# Deploy to any container platform. AWS Lambda is optional and requires Mangum.
 ```
 
 ## 🔮 Future Roadmap
