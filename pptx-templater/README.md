@@ -10,7 +10,7 @@ One-click PowerPoint personalization tool that lets users upload a Microsoft Pow
 - **Dark/Light Mode**: Beautiful UI with theme switching
 - **Responsive Design**: Works perfectly on desktop and mobile
 - **Privacy First**: Files auto-deleted after 30 seconds
-- **Lightning Fast**: < 3 second processing time
+- **Lightning Fast**: < 3 seconds processing time
 
 ## 🛠️ Tech Stack
 
