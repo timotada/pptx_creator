@@ -37,11 +37,29 @@ def test_process_endpoint_invalid_file_type():
     assert response.status_code == 400
     assert "File must be a .pptx file" in response.json()["detail"]
 
-def test_download_endpoint_not_implemented():
-    """Test download endpoint returns not implemented"""
+def test_download_file_not_found():
+    """Requesting a missing file should return 404"""
     response = client.get("/download/test.pptx")
-    assert response.status_code == 501
-    assert "not implemented" in response.json()["detail"]
+    assert response.status_code == 404
+    assert "File not found" in response.json()["detail"]
+
+
+def test_download_existing_file(tmp_path):
+    """Downloading an existing file returns the file with correct content type"""
+    from main import TEMP_OUTPUT_DIR
+    filename = "sample.pptx"
+    temp_file_path = tmp_path / filename
+    temp_file_path.write_bytes(b"dummy content")
+
+    # Copy the temp file into the application's output directory
+    import shutil, os
+    shutil.copy2(temp_file_path, os.path.join(TEMP_OUTPUT_DIR, filename))
+
+    response = client.get(f"/download/{filename}")
+    assert response.status_code == 200
+    assert response.headers["content-type"] == (
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    )
 
 # Integration tests would require actual PPTX files
 # These would be added in a full test suite 
