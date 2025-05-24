@@ -233,3 +233,6 @@ Thumbs.db
 *.temp
 temp/
 tmp/ 
+# Allow frontend utilities
+!pptx-templater/src/lib/
+!pptx-templater/src/lib/**
