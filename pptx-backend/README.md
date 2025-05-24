@@ -58,7 +58,7 @@ Process a PPTX template with placeholder replacement.
 ```json
 {
   "success": true,
-  "filename": "Acme_Corp_Investor_Deck_24th_May_2025.pptx",
+  "filename": "20250524 ADA and Acme Corp Meeting.pptx",
   "download_url": "/download/filename.pptx",
   "message": "Template processed successfully",
   "processing_time": 2.34
