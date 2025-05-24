@@ -31,7 +31,7 @@ class ProcessingResponse(BaseModel):
         json_schema_extra = {
             "example": {
                 "success": True,
-                "filename": "Acme_Corp_Investor_Deck_24th_May_2025.pptx",
+                "filename": "20250524 ADA and Acme Corp Meeting.pptx",
                 "download_url": "https://s3.amazonaws.com/bucket/presigned-url",
                 "message": "Template processed successfully",
                 "processing_time": 2.34
