@@ -232,4 +232,5 @@ Thumbs.db
 *.tmp
 *.temp
 temp/
-tmp/ 
+tmp/
+!pptx-templater/src/lib/
